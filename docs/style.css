@@ -1,0 +1,125 @@
+/* Kunst via naasten: huisstijl Boldwool / FeltFabriCk, rustige modus */
+:root{
+  --vacht:#F4EBDD; --licht:#FFF4E6; --viltroze:#E6406A; --baksteen:#F05A47;
+  --leisteen:#8FA6AE; --mokka:#5C4537; --inkt:#1A1614; --salie:#8E9470; --spinsel:#F2C4D2;
+  --f-head:"Bricolage Grotesque","Arial Black","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"Space Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --line:3px solid var(--inkt); --shadow:6px 6px 0 var(--inkt);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--vacht);color:var(--inkt);font-family:var(--f-body);font-size:1.0625rem;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--inkt);text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--viltroze)}
+a:hover{background:var(--spinsel)}
+a:focus-visible,.skip:focus{outline:3px solid var(--viltroze);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--licht);border:var(--line);padding:8px 14px;border-radius:12px;z-index:100}
+.skip:focus{left:8px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* nav */
+.topnav{position:sticky;top:0;z-index:50;background:var(--vacht);border-bottom:var(--line)}
+.navin{display:flex;gap:8px;overflow-x:auto;padding:10px 20px;max-width:1100px;margin:0 auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.navin::-webkit-scrollbar{display:none}
+.navin a{flex:none;font-family:var(--f-mono);font-size:.8125rem;font-weight:700;text-decoration:none;color:var(--inkt);background:var(--licht);border:2px solid var(--inkt);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.navin a:hover,.navin a:focus-visible{background:var(--spinsel)}
+
+/* typografie */
+h1,h2,h3{font-family:var(--f-head);font-weight:800;line-height:1.08;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,10vw,4.75rem)}
+h2{font-size:clamp(1.9rem,6.5vw,2.9rem);margin-bottom:22px}
+h3{font-size:clamp(1.3rem,4.6vw,1.65rem);margin:0 0 14px}
+p{margin:0 0 1em}
+.eyebrow{font-family:var(--f-mono);font-size:.875rem;font-weight:700;color:var(--mokka);margin:0 0 10px;letter-spacing:.01em}
+.lead{font-size:clamp(1.15rem,3.8vw,1.4rem);line-height:1.5;margin-top:20px}
+.lead p,.lead em{font-style:normal;margin:0}
+ul,ol{margin:0 0 1em;padding-left:1.25em}
+li{margin:0 0 .5em}
+li::marker{color:var(--viltroze);font-weight:700}
+strong{font-weight:700}
+.ref{font-family:var(--f-mono);font-size:.8em;font-weight:700;text-decoration:none;background:var(--spinsel);border:1.5px solid var(--inkt);border-radius:6px;padding:0 4px;margin:0 1px;white-space:nowrap;color:var(--inkt)}
+.ref:hover{background:var(--viltroze);color:var(--licht)}
+.url{overflow-wrap:anywhere;word-break:break-word}
+
+/* hero */
+.hero{padding:36px 0 56px}
+.hero-grid{display:grid;gap:32px;align-items:center}
+.art{margin:0}
+.art img{border:var(--line);border-radius:28px;box-shadow:var(--shadow);background:var(--vacht);width:100%}
+.hero-art{max-width:460px;width:100%;justify-self:center}
+
+/* banden */
+.band{padding:56px 0 64px;border-top:var(--line)}
+.band-roze{background:var(--spinsel)}
+.band-leisteen{background:var(--leisteen)}
+.band-saliegroen{background:var(--salie)}
+.band-crème{background:var(--vacht)}
+.band .eyebrow{color:var(--inkt)}
+.card{background:var(--licht);border:var(--line);border-radius:24px;box-shadow:var(--shadow);padding:24px 22px;margin:0 6px 30px 0}
+.card>:last-child{margin-bottom:0}
+.card>h3{display:inline-block;background:var(--spinsel);border:2px solid var(--inkt);border-radius:14px;padding:6px 14px 8px}
+.card-intro{font-size:1.0625rem}
+
+/* vijf opzetten */
+ol.opzetten{list-style:none;counter-reset:o;padding:0;margin:0}
+ol.opzetten li.opzet{counter-increment:o;position:relative;padding:0 0 0 58px;margin:0 0 22px;min-height:44px}
+ol.opzetten li.opzet:last-child{margin-bottom:0}
+ol.opzetten li.opzet::before{content:counter(o);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--viltroze);color:var(--licht);border:3px solid var(--inkt);box-shadow:3px 3px 0 var(--inkt);font-family:var(--f-head);font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center}
+ol.opzetten li.opzet>strong:first-child{font-family:var(--f-head);font-weight:800;font-size:1.15em;display:block;margin-bottom:2px}
+
+/* toepassingen */
+.apps{display:grid;gap:30px}
+.app{counter-increment:a;margin-bottom:0}
+.app h3{display:block;background:none;border:0;padding:0;margin:0 0 16px}
+.app ul{list-style:none;padding:0;margin:0}
+.app li.fld{padding:10px 0;border-top:2px dashed var(--leisteen);margin:0}
+.app li.fld:first-child{border-top:0;padding-top:0}
+.app li.fld>strong:first-child{display:block;font-family:var(--f-mono);font-size:.8125rem;font-weight:700;color:var(--mokka);margin-bottom:2px}
+.app li.fld>strong:first-child::before{content:"// ";color:var(--viltroze)}
+.app li.fld-first{background:var(--spinsel);border:2px solid var(--inkt);border-radius:16px;padding:12px 14px;margin:10px 0}
+.app li.fld-art{background:var(--vacht);border:2px dashed var(--mokka);border-radius:16px;padding:12px 14px;margin-top:10px}
+.app .art{margin:22px 6px 6px 0}
+.app.has-img .art{max-width:340px}
+
+/* veilig / pilot / initiatieven */
+.band-roze .card ul,.band-saliegroen .card ul{list-style:none;padding:0;margin:0 0 1em}
+.band-roze .card ul li{padding-left:30px;position:relative}
+.band-roze .card ul li::before{content:"";position:absolute;left:2px;top:.55em;width:14px;height:14px;border-radius:50%;background:var(--viltroze);border:2px solid var(--inkt)}
+ul.dagen{display:grid;gap:14px}
+ul.dagen li{background:var(--vacht);border:2px solid var(--inkt);border-radius:16px;padding:14px 16px;margin:0}
+ul.dagen li>strong:first-child{display:inline-block;font-family:var(--f-mono);font-size:.875rem;background:var(--spinsel);border:2px solid var(--inkt);border-radius:999px;padding:1px 10px;margin-right:6px}
+ul.initiatieven{list-style:none;padding:0}
+ul.initiatieven li{padding:14px 0;border-top:2px dashed var(--leisteen);margin:0;overflow-wrap:anywhere}
+ul.initiatieven li:first-child{border-top:0;padding-top:0}
+.card ul:not([class]) li,.card li{overflow-wrap:anywhere}
+ul[class="initiatieven"] a.url{font-family:var(--f-mono);font-size:.8125rem;display:block;margin-top:4px}
+
+/* bronnen */
+.card-sources{padding:22px 22px}
+ol.bronnen{font-size:.875rem;line-height:1.45;padding-left:2.1em;margin:0}
+ol.bronnen li{padding-left:4px;margin:0 0 .65em;overflow-wrap:anywhere;break-inside:avoid}
+ol.bronnen li::marker{font-family:var(--f-mono);font-weight:700;color:var(--mokka)}
+ol.bronnen li:target{background:var(--spinsel);border-radius:8px;outline:2px solid var(--inkt);outline-offset:2px}
+ol.bronnen a.url{font-family:var(--f-mono);font-size:.78rem}
+
+.foot{border-top:var(--line);padding:28px 0;background:var(--vacht)}
+.foot .eyebrow{margin:0}
+
+@media(min-width:760px){
+  body{font-size:1.125rem}
+  .wrap{padding:0 32px}
+  .hero{padding:64px 0 80px}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:56px}
+  .band{padding:84px 0 96px}
+  .card{padding:34px 38px}
+  .app.has-img{display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:start}
+  .app.has-img .art{margin:0 6px 6px 0}
+  ul.dagen li{margin:0}
+  ol.bronnen{columns:2;column-gap:40px}
+}
+@media(min-width:900px){
+  .navin{flex-wrap:wrap;justify-content:center;overflow:visible}
+  ul.dagen{grid-template-columns:1fr 1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
